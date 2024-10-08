@@ -1,0 +1,11 @@
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact__container bd-grid">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact__form">
+        <input type="text" formControlName="name" placeholder="Name" class="contact__input">
+        <input type="email" formControlName="email" placeholder="Email" class="contact__input">
+        <textarea formControlName="message" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+        <button type="submit"  class="contact__button button">Send</button>
+      </form>
+    </div>
+  </section>

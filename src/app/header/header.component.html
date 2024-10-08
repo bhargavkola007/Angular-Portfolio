@@ -1,0 +1,33 @@
+<header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Bhargav</a>
+  
+      <div class="nav__menu" [class.show-menu]="isMenuOpen">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a routerLink="/home" class="nav__link" routerLinkActive="active-link" (click)="closeMenu()">Home</a>
+          </li>
+          <li class="nav__item">
+            <a routerLink="/about" class="nav__link" routerLinkActive="active-link" (click)="closeMenu()">About</a>
+          </li>
+          <li class="nav__item">
+            <a routerLink="/skills" class="nav__link" routerLinkActive="active-link" (click)="closeMenu()">Skills</a>
+          </li>
+          <li class="nav__item">
+            <a routerLink="/work" class="nav__link" routerLinkActive="active-link" (click)="closeMenu()">Work</a>
+          </li>
+          <li class="nav__item">
+            <a routerLink="/contact" class="nav__link" routerLinkActive="active-link" (click)="closeMenu()">Contact</a>
+          </li>
+        </ul>
+        <div class="nav__close" (click)="closeMenu()">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+  
+      <div class="nav__toggle" (click)="toggleMenu()">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+<router-outlet></router-outlet>

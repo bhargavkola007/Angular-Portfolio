@@ -1,0 +1,154 @@
+
+/* Variables */
+$header-height: 3rem;
+$first-color: #55c6ff;
+$title-color: #333;
+$text-color: #707070;
+$body-color: #fbfefd;
+$container-color: #fff;
+
+/* Base */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $body-color;
+  color: $text-color;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $container-color;
+}
+
+/* Nav */
+.nav {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    color: $title-color;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  &__toggle,
+  &__close {
+    display: flex;
+    font-size: 1.25rem;
+    color: $title-color;
+    cursor: pointer;
+  }
+
+  /* Menu */
+  &__menu {
+    @media screen and (max-width: 767px) {
+      position: fixed;
+      background-color: $container-color;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100%;
+      box-shadow: -1px 0 4px rgba(0, 0, 0, .15);
+      padding: 3rem;
+      transition: .4s;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    list-style: none;
+  }
+
+  &__link {
+    color: $text-color;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color .4s;
+
+    &:hover {
+      color: $first-color;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+  }
+}
+
+/* Show menu */
+.show-menu {
+  right: 0 !important;
+}
+
+/* Active link */
+.active-link {
+  color: $first-color;
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    top: 0;
+    bottom: initial;
+  }
+
+  .nav {
+    height: calc($header-height + 1.5rem);
+    column-gap: 1rem;
+
+    &__menu {
+      margin-left: auto;
+    }
+
+    &__list {
+      flex-direction: row;
+      column-gap: 2rem;
+    }
+
+    &__toggle,
+    &__close {
+      display: none;
+    }
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
